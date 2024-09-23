@@ -1,10 +1,10 @@
 import { Button } from "@nextui-org/button";
-import { LuChevronRight } from "react-icons/lu";
 import {
   bannerGrey,
   bannerOrange2,
   hoodieOrginal,
 } from "../../assets/imgsData";
+import { ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -22,7 +22,7 @@ const HeroSection = () => {
           <div>
             <Button color="primary" className="w-40 text-base">
               Shop Now
-              <LuChevronRight />
+              <ChevronRight />
             </Button>
           </div>
         </div>

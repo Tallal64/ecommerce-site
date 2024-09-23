@@ -15,13 +15,8 @@ import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../redux/theme";
-import {
-  LuMoon,
-  LuSearch,
-  LuShoppingBag,
-  LuSun,
-  LuUser2,
-} from "react-icons/lu";
+import { Moon, Search, ShoppingBag, Sun, User2 } from "lucide-react";
+
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -104,23 +99,23 @@ const Header = () => {
             placeholder="you@example.com"
             className={`${isDarkMode ? "border-none" : "border"}} rounded-xl`}
             startContent={
-              <LuSearch strokeWidth={1.5} className="text-secondary-300" />
+              <Search strokeWidth={1.5} className="text-secondary-300" />
             }
           />
         </NavbarItem>
         <NavbarItem className="flex items-center gap-x-4 ml-5">
           <button onClick={handleToggle}>
             {isDarkMode ? (
-              <LuSun size={24} strokeWidth={1.5} />
+              <Sun size={24} strokeWidth={1.5} />
             ) : (
-              <LuMoon size={24} strokeWidth={1.5} />
+              <Moon size={24} strokeWidth={1.5} />
             )}
           </button>
           <NavLink to={"#"} className={``}>
-            <LuUser2 size={22} strokeWidth={1.5} />
+            <User2 size={22} strokeWidth={1.5} />
           </NavLink>
           <NavLink to={"#"} className={``}>
-            <LuShoppingBag size={22} strokeWidth={1.5} />
+            <ShoppingBag size={22} strokeWidth={1.5} />
           </NavLink>
         </NavbarItem>
       </NavbarContent>

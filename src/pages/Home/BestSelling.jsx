@@ -2,10 +2,10 @@ import { Button, Tab, Tabs } from "@nextui-org/react";
 import useEmblaCarousel from "embla-carousel-react";
 import { nanoid } from "nanoid";
 import { useCallback } from "react";
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { useSelector } from "react-redux";
 import { products } from "../../assets/dummyData";
 import ProductCard from "../../components/ProductCard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const BestSelling = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center" });
@@ -39,20 +39,13 @@ const BestSelling = () => {
         className="pl-4"
       >
         {tabs.map((tab, index) => (
-          <Tab
-            key={index}
-            title={tab.title}
-            // className={`${isDarkMode ? "border-none" : "border"}`}
-          />
+          <Tab key={index} title={tab.title} />
         ))}
       </Tabs>
 
       <div className="relative">
         {/* carousel */}
-        <div
-          className="max-w-[1400px] mx-auto overflow-hidden "
-          ref={emblaRef}
-        >
+        <div className="max-w-[1400px] mx-auto overflow-hidden " ref={emblaRef}>
           <div className="flex my-5">
             {products.map((product, index) => (
               <div
@@ -80,7 +73,7 @@ const BestSelling = () => {
           className="absolute top-[50%] left-5"
           onClick={scrollPrev}
         >
-          <LuChevronLeft size={28} strokeWidth={1.75} />
+          <ChevronLeft size={28} strokeWidth={1.75} />
         </Button>
         <Button
           isIconOnly
@@ -89,7 +82,7 @@ const BestSelling = () => {
           className="absolute top-[50%] right-5"
           onClick={scrollNext}
         >
-          <LuChevronRight size={28} strokeWidth={1.75} />
+          <ChevronRight size={28} strokeWidth={1.75} />
         </Button>
       </div>
     </div>

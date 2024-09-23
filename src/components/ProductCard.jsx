@@ -1,14 +1,13 @@
 /* eslint-disable react/prop-types */
 import {
-  Card,
   Button,
+  Card,
   CardBody,
   CardFooter,
   CardHeader,
   Image,
 } from "@nextui-org/react";
-import { MdAddShoppingCart } from "react-icons/md";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { Heart, Plus } from "lucide-react";
 import { useState } from "react";
 
 const ProductCard = ({ image, title, price, ...restProps }) => {
@@ -21,26 +20,27 @@ const ProductCard = ({ image, title, price, ...restProps }) => {
       {...restProps}
     >
       <CardHeader className="absolute z-10 top-4 right-4 flex-col items-end">
-        <Button
+      <Button
           isIconOnly
           radius="full"
           color="primary"
           variant="shadow"
           size="sm"
-        >
-          <MdAddShoppingCart size={18} />
-        </Button>
-        <Button
-          isIconOnly
-          radius="full"
-          color="primary"
-          variant="shadow"
-          size="sm"
-          className="mt-3"
           onClick={() => Setlike(!like)}
+          className="mb-3"
         >
-          {like ? <FaHeart size={16} /> : <FaRegHeart size={17} />}
+          <Heart size={16} className={`${like ? "fill-current" : ""}`} />
         </Button>
+        <Button
+          isIconOnly
+          radius="full"
+          color="primary"
+          variant="shadow"
+          size="sm"
+        >
+          <Plus size={18} />
+        </Button>
+        
       </CardHeader>
 
       <CardBody className="overflow-visible">

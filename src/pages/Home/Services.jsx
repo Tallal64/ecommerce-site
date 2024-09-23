@@ -1,21 +1,19 @@
-import { GiReceiveMoney } from "react-icons/gi";
-import { LuContainer } from "react-icons/lu";
-import { RiCustomerServiceFill } from "react-icons/ri";
+import { Container, HandCoins, Headset } from "lucide-react";
 
 const Services = () => {
   const listItems = [
     {
-      icon: <LuContainer size={32} />,
+      icon: <Container size={32} />,
       title: "Free shipping",
       description: "We offer free shipping on orders over $99",
     },
     {
-      icon: <GiReceiveMoney size={32} />,
+      icon: <HandCoins size={32} />,
       title: "Flexible Payment",
       description: "We offer free shipping on orders over $99",
     },
     {
-      icon: <RiCustomerServiceFill size={32} />,
+      icon: <Headset size={32} />,
       title: "24/7 Support",
       description: "We offer free shipping on orders over $99",
     },
