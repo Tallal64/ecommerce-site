@@ -10,13 +10,18 @@ import {
   DropdownMenu,
   Input,
 } from "@nextui-org/react";
-import { Moon, Search, ShoppingBag, Sun, UserRound } from "lucide-react";
 import { nanoid } from "nanoid";
 import { NavLink } from "react-router-dom";
-import { ThemeSwitcher } from "./Theme/ThemeSwitcher";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../redux/theme";
+import {
+  LuMoon,
+  LuSearch,
+  LuShoppingBag,
+  LuSun,
+  LuUser2,
+} from "react-icons/lu";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -32,8 +37,6 @@ const Header = () => {
   const handleToggle = () => {
     dispatch(toggleTheme());
   };
-
-  console.log(isDarkMode)
 
   const navlinks = [
     {
@@ -64,7 +67,12 @@ const Header = () => {
   ];
 
   return (
-    <Navbar maxWidth="2xl" className="container mx-auto">
+    <Navbar
+      maxWidth="2xl"
+      position="static"
+      shouldHideOnScroll
+      className=" mx-auto py-2"
+    >
       <div className="flex-[0.5]">
         <NavLink className="text-4xl radley-italic">ventore</NavLink>
       </div>
@@ -96,23 +104,23 @@ const Header = () => {
             placeholder="you@example.com"
             className={`${isDarkMode ? "border-none" : "border"}} rounded-xl`}
             startContent={
-              <Search strokeWidth={1.5} className="text-secondary-300" />
+              <LuSearch strokeWidth={1.5} className="text-secondary-300" />
             }
           />
         </NavbarItem>
         <NavbarItem className="flex items-center gap-x-4 ml-5">
           <button onClick={handleToggle}>
             {isDarkMode ? (
-              <Sun size={24} strokeWidth={1.5} />
+              <LuSun size={24} strokeWidth={1.5} />
             ) : (
-              <Moon size={24} strokeWidth={1.5} />
+              <LuMoon size={24} strokeWidth={1.5} />
             )}
           </button>
           <NavLink to={"#"} className={``}>
-            <UserRound strokeWidth={1.5} />
+            <LuUser2 size={22} strokeWidth={1.5} />
           </NavLink>
           <NavLink to={"#"} className={``}>
-            <ShoppingBag size={22} strokeWidth={1.5} />
+            <LuShoppingBag size={22} strokeWidth={1.5} />
           </NavLink>
         </NavbarItem>
       </NavbarContent>

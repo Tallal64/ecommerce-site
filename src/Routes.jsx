@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./Layout";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home";
 
 const RoutesConf = () => {
   return (

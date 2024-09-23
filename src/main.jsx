@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import RoutesConf from "./Routes";
 import "./index.css";
+import "./embla.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
