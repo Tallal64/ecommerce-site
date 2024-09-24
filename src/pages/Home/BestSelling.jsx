@@ -1,11 +1,11 @@
 import { Button, Tab, Tabs } from "@nextui-org/react";
 import useEmblaCarousel from "embla-carousel-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { nanoid } from "nanoid";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { products } from "../../assets/dummyData";
 import ProductCard from "../../components/ProductCard";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const BestSelling = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "center" });
@@ -45,7 +45,7 @@ const BestSelling = () => {
 
       <div className="relative">
         {/* carousel */}
-        <div className="max-w-[1400px] mx-auto overflow-hidden " ref={emblaRef}>
+        <div className="max-w-[1400px] mx-auto overflow-hidden" ref={emblaRef}>
           <div className="flex my-5">
             {products.map((product, index) => (
               <div
@@ -73,7 +73,7 @@ const BestSelling = () => {
           className="absolute top-[50%] left-5"
           onClick={scrollPrev}
         >
-          <ChevronLeft size={28} strokeWidth={1.75} />
+          <ArrowLeft size={20} />
         </Button>
         <Button
           isIconOnly
@@ -82,7 +82,7 @@ const BestSelling = () => {
           className="absolute top-[50%] right-5"
           onClick={scrollNext}
         >
-          <ChevronRight size={28} strokeWidth={1.75} />
+          <ArrowRight size={20} />
         </Button>
       </div>
     </div>

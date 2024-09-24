@@ -28,6 +28,15 @@ import NikeShirt3 from "./img/NikeShirt3.png";
 import NikeShirt4 from "./img/NikeShirt4.png";
 import NikeShirt5 from "./img/NikeShirt5.png";
 import NikeShirt6 from "./img/NikeShirt6.png";
+import NikeShirt7 from "./img/NikeShirt7.png";
+import NikeShirt8 from "./img/NikeShirt8.png";
+import shoe2 from "./img/shoes2.png";
+import shoe3 from "./img/shoes3.png";
+import shoe4 from "./img/shoes4.png";
+import shoePing2 from "./img/shoesPing2.png";
+import shoePing3 from "./img/shoesPing3.png";
+import shoePing4 from "./img/shoesPing4.png";
+import shoePing1 from "./img/shoesPing.png";
 import tshirts from "./img/t-shirts.jpg";
 import women from "./img/women.jpg";
 import women2 from "./img/women2.jpg";
@@ -50,6 +59,8 @@ export {
   NikeShirt4,
   NikeShirt5,
   NikeShirt6,
+  NikeShirt7,
+  NikeShirt8,
   bannerGrey,
   bannerOrange2,
   bodyMna,
@@ -63,7 +74,15 @@ export {
   looking,
   man2,
   men1,
+  shoe2,
+  shoe3,
+  shoe4,
+  shoePing1,
+  shoePing2,
+  shoePing3,
+  shoePing4,
   tshirts,
   women,
-  women2,
+  women2
 };
+

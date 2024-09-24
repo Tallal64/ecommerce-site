@@ -1,39 +1,67 @@
 import { Button } from "@nextui-org/button";
-import {
-  bannerGrey,
-  bannerOrange2,
-  hoodieOrginal,
-} from "../../assets/imgsData";
-import { ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { nanoid } from "nanoid";
+import { useCallback } from "react";
+import { heroData } from "../../assets/dummyData";
+import HeroCard from "../../components/HeroCard";
 
 const HeroSection = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "center",
+    loop: true,
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollPrev();
+  }, [emblaApi]);
+  const scrollNext = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
-    <div className="relative h-[820px] overflow-hidden">
-      <div className="container mx-auto flex flex-col gap-y-12 items-center h-full md:flex-row ">
-        {/* for text */}
-        <div className="px-10 flex flex-col gap-y-5 text-center md:text-left">
-          <h2 className="text-3xl lg:text-6xl font-semibold text-secondary-50">
-            Step into Fashion at your <br /> Ultimate Style Destination.
-          </h2>
-          <p className="text-lg text-secondary-100">
-            Dive into your ultimate style destination today and transform your
-            <br /> wardrobe with premium fashion at unbeatable prices.
-          </p>
-          <div>
-            <Button color="primary" className="w-40 text-base">
-              Shop Now
-              <ChevronRight />
-            </Button>
+    <div className="container mx-auto mt-5">
+      <h2 className="text-xl font-semibold uppercase text-center">
+        new released
+      </h2>
+
+      <div className="relative">
+        <div className="max-w-[1400px] mx-auto overflow-hidden" ref={emblaRef}>
+          <div className="flex mt-1.5 mb-4">
+            {heroData.map((item) => (
+              <div key={nanoid()} className="mr-8">
+                <HeroCard
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  price={item.price}
+                />
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* for img */}
-        <div className="absolute bg-black/60 w-full h-full top-0 right-0 -z-10" />
-        <img
-          src={bannerOrange2}
-          alt="img"
-          className="absolute w-full h-full object-cover object-top top-0 right-0 -z-20"
-        />
+        {/* buttons */}
+        <Button
+          isIconOnly
+          radius="full"
+          variant="flat"
+          className="absolute top-[50%] left-5"
+          onClick={scrollPrev}
+        >
+          <ArrowLeft size={20} />
+        </Button>
+        <Button
+          isIconOnly
+          radius="full"
+          variant="flat"
+          className="absolute top-[50%] right-5"
+          onClick={scrollNext}
+        >
+          <ArrowRight size={20} />
+        </Button>
       </div>
     </div>
   );

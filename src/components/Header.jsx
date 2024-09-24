@@ -1,22 +1,21 @@
 import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+  Input,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Button,
-  DropdownItem,
-  DropdownTrigger,
-  Dropdown,
-  DropdownMenu,
-  Input,
 } from "@nextui-org/react";
+import { Moon, Search, ShoppingBag, Sun, User2 } from "lucide-react";
 import { nanoid } from "nanoid";
-import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { toggleTheme } from "../redux/theme";
-import { Moon, Search, ShoppingBag, Sun, User2 } from "lucide-react";
-
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -97,9 +96,13 @@ const Header = () => {
           <Input
             type="email"
             placeholder="you@example.com"
-            className={`${isDarkMode ? "border-none" : "border"}} rounded-xl`}
+            className={`rounded-xl ${
+              isDarkMode
+                ? "border-transparent bg-background text-foreground"
+                : "border border-secondary/20"
+            }`}
             startContent={
-              <Search strokeWidth={1.5} className="text-secondary-300" />
+              <Search strokeWidth={1.5} className="text-foreground/50" />
             }
           />
         </NavbarItem>
