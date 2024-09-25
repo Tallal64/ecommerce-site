@@ -20,7 +20,7 @@ const ProductCard = ({ image, title, price, ...restProps }) => {
       {...restProps}
     >
       <CardHeader className="absolute z-10 top-4 right-4 flex-col items-end">
-      <Button
+        <Button
           isIconOnly
           radius="full"
           color="primary"
@@ -40,7 +40,6 @@ const ProductCard = ({ image, title, price, ...restProps }) => {
         >
           <Plus size={18} />
         </Button>
-        
       </CardHeader>
 
       <CardBody className="overflow-visible">
@@ -48,8 +47,8 @@ const ProductCard = ({ image, title, price, ...restProps }) => {
           radius="lg"
           isZoomed
           alt={title}
-          className="w-full h-full object-cover z-0"
           src={image}
+          className="w-full h-full object-cover max-h-[592px] z-0 "
         />
       </CardBody>
       <CardFooter className="flex-col items-start h-full">

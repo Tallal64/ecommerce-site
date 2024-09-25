@@ -35,7 +35,7 @@ const HeroCard = ({ image, title, price, description }) => {
         removeWrapper
         isZoomed
         alt="Img"
-        className="z-0 w-full h-full object-contain bg-white"
+        className="z-0 w-full h-full object-cover bg-white"
         src={image}
       />
       <footer className="absolute bg-black/50 bottom-4 left-10 right-10 z-10 rounded-lg">

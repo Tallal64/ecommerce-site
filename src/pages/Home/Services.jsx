@@ -20,7 +20,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="container mx-auto flex justify-around mt-10">
+    <div className="container mx-auto flex justify-around mt-20">
       {listItems.map((item, index) => (
         <div key={index} className="flex items-center gap-x-2">
           <div>{item.icon}</div>

@@ -1,35 +1,37 @@
 import { Button } from "@nextui-org/button";
-import { ctalmg } from "../../assets/imgsData";
-import { ChevronRight } from "lucide-react";
+import { Input } from "@nextui-org/react";
+import { useSelector } from "react-redux";
 
 const Cta = () => {
-  return (
-    <div className="container mx-auto h-[550px] overflow-hidden mt-20 flex items-center justify-between bg-foreground/10 rounded-xl">
-      {/* img */}
-      <div className="flex-1">
-        <img
-          src={ctalmg}
-          alt="ctaImg"
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
+  const isDarkMode = useSelector((state) => state.theme.darkMode);
 
-      {/* text */}
-      <div className="flex-1 flex flex-col items-start gap-y-3">
-        <p className="text-2xl font-medium">Limited Offer</p>
-        <h2 className="text-6xl font-bold">
-          Get 30% OFF on <br />
-          All Fashion
-        </h2>
-        <p className="">
-          Discover Your signature look for less. Enjoy discount All Fashion
-          <br />
-          item! Limited offer
-        </p>
-        <Button color="primary" className="w-40 text-base">
-          Shop Now
-          <ChevronRight />
-        </Button>
+  return (
+    <div className="container mx-auto my-20 space-y-4">
+      <h4 className="text-5xl font-semibold text-center">
+        Subscribe now & get 20% off
+      </h4>
+      <p className="text-xl font-normal text-foreground/60 text-center">
+        Its get so maad. when the rock is cooking!
+      </p>
+      <div className="max-w-screen-md mx-auto">
+        <Input
+          type="email"
+          placeholder="Enter your email"
+          size="lg"
+          className={`rounded-xl ${
+            isDarkMode
+              ? "border-transparent bg-background text-foreground"
+              : "border border-secondary/20"
+          }`}
+          endContent={
+            <Button
+              color="primary"
+              className="absolute right-0 h-full w-32 font-medium rounded-r-lg rounded-l-none"
+            >
+              Subscribe
+            </Button>
+          }
+        />
       </div>
     </div>
   );

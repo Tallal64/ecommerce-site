@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { nanoid } from "nanoid";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
-import { products } from "../../assets/dummyData";
+import { bestSelling } from "../../assets/dummyData";
 import ProductCard from "../../components/ProductCard";
 
 const BestSelling = () => {
@@ -47,12 +47,12 @@ const BestSelling = () => {
         {/* carousel */}
         <div className="max-w-[1400px] mx-auto overflow-hidden" ref={emblaRef}>
           <div className="flex my-5">
-            {products.map((product, index) => (
+            {bestSelling.map((product, index) => (
               <div
                 key={nanoid()}
                 className={`
                 ${index === 0 ? "ml-0 mr-8 pl-2" : "mx-8"} 
-                ${index === products.length - 1 ? "mr-0 ml-8 pr-2" : ""}
+                ${index === bestSelling.length - 1 ? "mr-0 ml-8 pr-2" : ""}
 
               `}
               >

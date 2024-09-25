@@ -3,7 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { nanoid } from "nanoid";
 import { useCallback } from "react";
-import { heroData } from "../../assets/dummyData";
+import { heroCarousel } from "../../assets/dummyData";
 import HeroCard from "../../components/HeroCard";
 
 const HeroSection = () => {
@@ -30,7 +30,7 @@ const HeroSection = () => {
       <div className="relative">
         <div className="max-w-[1400px] mx-auto overflow-hidden" ref={emblaRef}>
           <div className="flex mt-1.5 mb-4">
-            {heroData.map((item) => (
+            {heroCarousel.map((item) => (
               <div key={nanoid()} className="mr-8">
                 <HeroCard
                   title={item.title}

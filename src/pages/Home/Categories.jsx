@@ -1,11 +1,11 @@
-import { kids, men1, women } from "../../assets/imgsData";
+import { kid, man, woman } from "../../assets/dummyData";
 import CategroriesCard from "../../components/CategroriesCard";
 
 const Categories = () => {
   const categoriesData = [
-    { img: men1, title: "men fashion" },
-    { img: women, title: "women fashion" },
-    { img: kids, title: "kids fashion" },
+    { img: man, title: "men fashion" },
+    { img: woman, title: "women fashion" },
+    { img: kid, title: "kids fashion" },
   ];
 
   return (
