@@ -7,8 +7,9 @@ import {
   CardHeader,
   Image,
 } from "@nextui-org/react";
-import { Heart, Plus } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useState } from "react";
+import AddToCartButton from "./AddToCartButton";
 
 const ProductCard = ({ image, title, price, ...restProps }) => {
   const [like, Setlike] = useState(false);
@@ -16,7 +17,7 @@ const ProductCard = ({ image, title, price, ...restProps }) => {
   return (
     <Card
       shadow="sm"
-      className="bg-transparent w-[420px] h-[520px] cursor-pointer"
+      className="bg-transparent w-[420px] h-[520px] max-w-[420px] max-h-[520px] cursor-pointer"
       {...restProps}
     >
       <CardHeader className="absolute z-10 top-4 right-4 flex-col items-end">
@@ -31,15 +32,7 @@ const ProductCard = ({ image, title, price, ...restProps }) => {
         >
           <Heart size={16} className={`${like ? "fill-current" : ""}`} />
         </Button>
-        <Button
-          isIconOnly
-          radius="full"
-          color="primary"
-          variant="shadow"
-          size="sm"
-        >
-          <Plus size={18} />
-        </Button>
+        <AddToCartButton size={"sm"} />
       </CardHeader>
 
       <CardBody className="overflow-visible">
@@ -48,7 +41,7 @@ const ProductCard = ({ image, title, price, ...restProps }) => {
           isZoomed
           alt={title}
           src={image}
-          className="w-full h-full object-cover max-h-[592px] z-0 "
+          className="w-full h-full object-cover z-0 "
         />
       </CardBody>
       <CardFooter className="flex-col items-start h-full">

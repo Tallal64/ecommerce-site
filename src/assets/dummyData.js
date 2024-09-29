@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+import { nanoid } from "nanoid";
 import kid from "./imgs/kid.jpg";
 import kid1 from "./imgs/kid1.png";
 import kid2 from "./imgs/kid2.png";
@@ -6,7 +6,7 @@ import kid3 from "./imgs/kid3.png";
 import kid4 from "./imgs/kid4.png";
 import kid5 from "./imgs/kid5.png";
 import kid6 from "./imgs/kid6.png";
-import kid7 from "./imgs/kid7.jpeg";
+import kid7 from "./imgs/kid7.png";
 import man from "./imgs/man.jpg";
 import men from "./imgs/men.png";
 import men1 from "./imgs/men1.png";
@@ -29,6 +29,7 @@ export { kid, man, woman };
 
 export const heroCarousel = [
   {
+    id: nanoid(),
     title: "Ergonomic Office Chair",
     description: "Provides comfort and support for long working hours.",
     category: "furniture",
@@ -61,6 +62,7 @@ export const heroCarousel = [
     image: men1,
   },
   {
+    id: nanoid(),
     title: "Ergonomic Office Chair",
     description: "Provides comfort and support for long working hours.",
     category: "furniture",
@@ -90,9 +92,10 @@ export const heroCarousel = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: women1,
+    image: women5,
   },
   {
+    id: nanoid(),
     title: "Ergonomic Office Chair",
     description: "Provides comfort and support for long working hours.",
     category: "furniture",
@@ -125,6 +128,7 @@ export const heroCarousel = [
     image: kid1,
   },
   {
+    id: nanoid(),
     title: "Ergonomic Office Chair",
     description: "Provides comfort and support for long working hours.",
     category: "furniture",
@@ -157,6 +161,7 @@ export const heroCarousel = [
     image: men2,
   },
   {
+    id: nanoid(),
     title: "Ergonomic Office Chair",
     description: "Provides comfort and support for long working hours.",
     category: "furniture",
@@ -192,6 +197,7 @@ export const heroCarousel = [
 
 export const products = [
   {
+    id: nanoid(),
     title: "Men's Slim Fit T-Shirt",
     description:
       "A classic slim-fit t-shirt made with soft cotton fabric for all-day comfort.",
@@ -220,36 +226,9 @@ export const products = [
     returnPolicy: "90 days return policy",
     image: women1,
   },
+ 
   {
-    title: "Men T shirt",
-    description:
-      "Cozy hoodie for kids with soft fleece lining and front pockets.",
-    category: "Kids' Clothing",
-    price: 30.49,
-    discountPercentage: 15,
-    rating: 4.8,
-    stock: 100,
-    warrantyInformation: "2 years warranty",
-    shippingInformation: "Ships in 7-10 business days",
-    availabilityStatus: "In Stock",
-    reviews: [
-      {
-        rating: 5,
-        comment: "My son loves it, very warm and soft.",
-        reviewerName: "Olivia Taylor",
-        reviewerEmail: "olivia.taylor@x.dummyjson.com",
-      },
-      {
-        rating: 4.5,
-        comment: "Great hoodie but slightly oversized.",
-        reviewerName: "James Wilson",
-        reviewerEmail: "james.wilson@x.dummyjson.com",
-      },
-    ],
-    returnPolicy: "90 days return policy",
-    image: men2,
-  },
-  {
+    id: nanoid(),
     title: "Men's Denim Jacket",
     description: "Stylish denim jacket with button closures and chest pockets.",
     category: "Men's Clothing",
@@ -275,9 +254,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: men2,
+    image: kid1,
   },
   {
+    id: nanoid(),
     title: "Kids' Graphic Tee",
     description:
       "Fun graphic tee made with breathable cotton, perfect for everyday wear.",
@@ -304,9 +284,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: kid2,
+    image: women2,
   },
   {
+    id: nanoid(),
     title: "Men's Joggers",
     description:
       "Comfortable joggers with elastic waistband and adjustable drawstring.",
@@ -333,9 +314,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: kid3,
+    image: men1,
   },
   {
+    id: nanoid(),
     title: "Kids' Cargo Pants",
     description:
       "Durable cargo pants with multiple pockets, ideal for outdoor play.",
@@ -362,9 +344,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: men3,
+    image: kid2,
   },
   {
+    id: nanoid(),
     title: "Men's Formal Shirt",
     description:
       "Elegant formal shirt with a crisp finish, perfect for business meetings.",
@@ -395,6 +378,7 @@ export const products = [
   },
 
   {
+    id: nanoid(),
     title: "Kids' Denim Shorts",
     description:
       "Stylish denim shorts with rolled hems and adjustable waistband.",
@@ -421,9 +405,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: men3,
   },
   {
+    id: nanoid(),
     title: "Men's Classic Polo",
     description:
       "A versatile polo shirt with a soft collar and three-button placket.",
@@ -450,9 +435,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: kid4,
   },
   {
+    id: nanoid(),
     title: "Kids' Raincoat",
     description:
       "Waterproof raincoat with a hood and front zip, perfect for rainy days.",
@@ -479,9 +465,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: women4,
   },
   {
+    id: nanoid(),
     title: "Men's Leather Jacket",
     description:
       "Premium leather jacket with a vintage finish, ideal for a rugged look.",
@@ -508,9 +495,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: men4,
   },
   {
+    id: nanoid(),
     title: "Kids' Pajama Set",
     description:
       "Comfortable pajama set with a fun print, made from soft cotton fabric.",
@@ -537,9 +525,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: kid5,
   },
   {
+    id: nanoid(),
     title: "Men's Woolen Sweater",
     description:
       "Warm woolen sweater with a ribbed texture, perfect for cold weather.",
@@ -566,9 +555,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: women5,
   },
   {
+    id: nanoid(),
     title: "Kids' Sneakers",
     description: "Durable and comfortable sneakers, perfect for active kids.",
     category: "Kids' Clothing",
@@ -594,9 +584,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: men5,
   },
   {
+    id: nanoid(),
     title: "Men's Winter Coat",
     description:
       "Heavy-duty winter coat with faux fur lining for extra warmth.",
@@ -623,9 +614,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: kid6,
   },
   {
+    id: nanoid(),
     title: "Kids' Winter Boots",
     description:
       "Waterproof winter boots with fleece lining to keep little feet warm.",
@@ -652,9 +644,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: men6,
   },
   {
+    id: nanoid(),
     title: "Men's Sports Shorts",
     description:
       "Breathable and moisture-wicking shorts, ideal for workouts and sports.",
@@ -681,9 +674,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: kid7,
   },
   {
+    id: nanoid(),
     title: "Men's Graphic Tee",
     description:
       "Comfortable graphic t-shirt made from 100% cotton, featuring a unique design.",
@@ -710,9 +704,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: men8,
   },
   {
+    id: nanoid(),
     title: "Kids' Hoodie",
     description:
       "Cozy hoodie with a kangaroo pocket and adjustable drawstrings.",
@@ -739,9 +734,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: men9,
   },
   {
+    id: nanoid(),
     title: "Men's Casual Chinos",
     description: "Stylish chinos with a slim fit, perfect for casual outings.",
     category: "Men's Clothing",
@@ -767,9 +763,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: men7,
   },
   {
+    id: nanoid(),
     title: "Kids' Winter Jacket",
     description:
       "Insulated winter jacket with a removable hood, designed for harsh weather.",
@@ -796,9 +793,10 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: men2,
   },
   {
+    id: nanoid(),
     title: "Men's Dress Shirt",
     description:
       "Elegant dress shirt made from breathable fabric, perfect for formal occasions.",
@@ -825,13 +823,13 @@ export const products = [
       },
     ],
     returnPolicy: "90 days return policy",
-    image: "",
+    image: kid3,
   },
 ];
 
-
 export const bestSelling = [
   {
+    id: nanoid(),
     title: "Men's Slim Fit T-Shirt",
     description:
       "A classic slim-fit t-shirt made with soft cotton fabric for all-day comfort.",
@@ -861,6 +859,7 @@ export const bestSelling = [
     image: women1,
   },
   {
+    id: nanoid(),
     title: "Men T shirt",
     description:
       "Cozy hoodie for kids with soft fleece lining and front pockets.",
@@ -890,6 +889,7 @@ export const bestSelling = [
     image: men1,
   },
   {
+    id: nanoid(),
     title: "Men's Denim Jacket",
     description: "Stylish denim jacket with button closures and chest pockets.",
     category: "Men's Clothing",
@@ -918,6 +918,7 @@ export const bestSelling = [
     image: men2,
   },
   {
+    id: nanoid(),
     title: "Kids' Graphic Tee",
     description:
       "Fun graphic tee made with breathable cotton, perfect for everyday wear.",
@@ -947,6 +948,7 @@ export const bestSelling = [
     image: kid2,
   },
   {
+    id: nanoid(),
     title: "Men's Joggers",
     description:
       "Comfortable joggers with elastic waistband and adjustable drawstring.",
@@ -976,6 +978,7 @@ export const bestSelling = [
     image: kid3,
   },
   {
+    id: nanoid(),
     title: "Kids' Cargo Pants",
     description:
       "Durable cargo pants with multiple pockets, ideal for outdoor play.",
@@ -1005,6 +1008,7 @@ export const bestSelling = [
     image: men3,
   },
   {
+    id: nanoid(),
     title: "Men's Formal Shirt",
     description:
       "Elegant formal shirt with a crisp finish, perfect for business meetings.",

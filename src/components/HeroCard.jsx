@@ -1,13 +1,18 @@
 /* eslint-disable react/prop-types */
 import { Button, Card, CardHeader, Image } from "@nextui-org/react";
-import { Heart, Plus } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useState } from "react";
+import AddToCartButton from "./AddToCartButton";
 
 const HeroCard = ({ image, title, price, description }) => {
   const [like, Setlike] = useState(false);
 
   return (
-    <Card isFooterBlurred className="w-[750px] h-[450px] cursor-pointer">
+    <Card
+      isFooterBlurred
+      shadow="none"
+      className="w-[750px] h-[450px] cursor-pointer"
+    >
       <CardHeader className="absolute z-10 top-4 right-4 flex-col items-end">
         <Button
           isIconOnly
@@ -20,25 +25,17 @@ const HeroCard = ({ image, title, price, description }) => {
         >
           <Heart size={18} className={`${like ? "fill-current" : ""}`} />
         </Button>
-        <Button
-          isIconOnly
-          radius="full"
-          color="primary"
-          variant="shadow"
-          size="md"
-        >
-          <Plus size={20} />
-        </Button>
+        <AddToCartButton />
       </CardHeader>
 
       <Image
         removeWrapper
         isZoomed
         alt="Img"
-        className="z-0 w-full h-full object-cover bg-white"
+        className="z-0 w-full h-full object-cover"
         src={image}
       />
-      <footer className="absolute bg-black/50 bottom-4 left-10 right-10 z-10 rounded-lg">
+      <div className="absolute bg-black/50 bottom-4 left-10 right-10 z-10 rounded-lg">
         <div className="p-5">
           <div className="flex justify-between">
             <p className="text-xl font-semibold text-white capitalize ">
@@ -49,7 +46,7 @@ const HeroCard = ({ image, title, price, description }) => {
 
           <p className="text-white">{description}</p>
         </div>
-      </footer>
+      </div>
     </Card>
   );
 };

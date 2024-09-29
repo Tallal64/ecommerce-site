@@ -1,25 +1,15 @@
-import {
-  Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-  Input,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/react";
+import { Input, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 import { Moon, Search, ShoppingBag, Sun, User2 } from "lucide-react";
 import { nanoid } from "nanoid";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { toggleTheme } from "../redux/theme";
+import { toggleTheme } from "../redux/theme/themeSlice";
 
 const Header = () => {
-  const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.theme.darkMode);
+  const cartValue = useSelector((state) => state.feature.cartValue);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (isDarkMode) {
@@ -32,16 +22,11 @@ const Header = () => {
     dispatch(toggleTheme());
   };
 
-  const navlinks = [
+  const navlinks = [ 
     {
       id: nanoid(),
       title: "Home",
       href: "/",
-    },
-    {
-      id: nanoid(),
-      title: "Categories",
-      href: "categories",
     },
     {
       id: nanoid(),
@@ -65,11 +50,11 @@ const Header = () => {
       maxWidth="2xl"
       position="static"
       shouldHideOnScroll
-      className=" mx-auto py-2"
+      className="mx-auto py-2"
     >
-      <div className="flex-[0.5]">
+      <nav className="flex-[0.7]">
         <NavLink className="text-4xl radley-italic">ventore</NavLink>
-      </div>
+      </nav>
       <NavbarContent
         className="hidden gap-4 md:flex md:gap-x-10"
         justify="center"
@@ -106,7 +91,7 @@ const Header = () => {
             }
           />
         </NavbarItem>
-        <NavbarItem className="flex items-center gap-x-4 ml-5">
+        <NavbarItem className="relative flex items-center gap-x-4 ml-5">
           <button onClick={handleToggle}>
             {isDarkMode ? (
               <Sun size={24} strokeWidth={1.5} />
@@ -118,6 +103,11 @@ const Header = () => {
             <User2 size={22} strokeWidth={1.5} />
           </NavLink>
           <NavLink to={"#"} className={``}>
+            {cartValue > 0 ? (
+              <div className="absolute text-white bg-primary -top-2 -right-2 w-[18px] h-[18px] flex items-center justify-center rounded-full text-xs font-semibold">
+                {cartValue}
+              </div>
+            ) : null}
             <ShoppingBag size={22} strokeWidth={1.5} />
           </NavLink>
         </NavbarItem>

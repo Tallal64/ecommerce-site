@@ -6,13 +6,13 @@ import Services from "./Services";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <HeroSection />
       <Services />
       <Categories />
       <BestSelling />
       <Cta />
-    </div>
+    </>
   );
 };
 

@@ -1,7 +1,6 @@
 import { Button } from "@nextui-org/button";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { nanoid } from "nanoid";
 import { useCallback } from "react";
 import { heroCarousel } from "../../assets/dummyData";
 import HeroCard from "../../components/HeroCard";
@@ -23,16 +22,20 @@ const HeroSection = () => {
 
   return (
     <div className="container mx-auto mt-5">
-      <h2 className="text-xl font-semibold uppercase text-center">
+      <h2 className="text-xl font-semibold uppercase text-center mb-1">
         new released
       </h2>
 
       <div className="relative">
-        <div className="max-w-[1400px] mx-auto overflow-hidden" ref={emblaRef}>
-          <div className="flex mt-1.5 mb-4">
+        <div
+          className="max-w-[1400px] mx-auto rounded-xl overflow-hidden"
+          ref={emblaRef}
+        >
+          <div className="flex">
             {heroCarousel.map((item) => (
-              <div key={nanoid()} className="mr-8">
+              <div key={item.id} className="mr-8">
                 <HeroCard
+                  id={item.id}
                   title={item.title}
                   description={item.description}
                   image={item.image}
