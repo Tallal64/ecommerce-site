@@ -2,7 +2,7 @@ import { Button } from "@nextui-org/button";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useCallback } from "react";
-import { heroCarousel } from "../../assets/dummyData";
+import { products } from "../../assets/dummyData";
 import HeroCard from "../../components/HeroCard";
 
 const HeroSection = () => {
@@ -20,6 +20,17 @@ const HeroSection = () => {
     emblaApi.scrollNext();
   }, [emblaApi]);
 
+  /* function for random selection */
+  const getRandomElements = (array, n) => {
+    return array
+      .map((item) => ({ item, sort: Math.random() })) // Assign random sort values
+      .sort((a, b) => a.sort - b.sort) // Sort by random values
+      .map(({ item }) => item) // Extract original values
+      .slice(0, n); // Get n elements
+  };
+
+  let heroCarousel = getRandomElements(products, 7);
+
   return (
     <div className="container mx-auto mt-5">
       <h2 className="text-xl font-semibold uppercase text-center mb-1">
@@ -35,11 +46,11 @@ const HeroSection = () => {
             {heroCarousel.map((item) => (
               <div key={item.id} className="mr-8">
                 <HeroCard
-                  id={item.id}
+                  href={item.id}
                   title={item.title}
-                  description={item.description}
                   image={item.image}
                   price={item.price}
+                  description={item.description}
                 />
               </div>
             ))}

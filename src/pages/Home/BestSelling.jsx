@@ -3,7 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { nanoid } from "nanoid";
 import { useCallback } from "react";
-import { bestSelling } from "../../assets/dummyData";
+import { products } from "../../assets/dummyData";
 import ProductCard from "../../components/ProductCard";
 
 const BestSelling = () => {
@@ -21,6 +21,17 @@ const BestSelling = () => {
     emblaApi.scrollNext();
   }, [emblaApi]);
 
+  /* function for random selection */
+  const getRandomElements = (array, n) => {
+    return array
+      .map((item) => ({ item, sort: Math.random() })) // Assign random sort values
+      .sort((a, b) => a.sort - b.sort) // Sort by random values
+      .map(({ item }) => item) // Extract original values
+      .slice(0, n); // Get n elements
+  };
+
+  let bestSelling = getRandomElements(products, 7);
+
   return (
     <div className="container mx-auto mt-20">
       <h3 className="text-3xl capitalize font-medium mb-3 pl-4">
@@ -34,6 +45,7 @@ const BestSelling = () => {
             {bestSelling.map((product) => (
               <div key={nanoid()} className={`mr-10`}>
                 <ProductCard
+                  href={product.id}
                   title={product.title}
                   price={product.price}
                   image={product.image}

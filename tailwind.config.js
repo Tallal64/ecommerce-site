@@ -65,8 +65,8 @@ module.exports = {
             background: "#121212",
             foreground: "#ffffff",
             secondary: {
-              DEFAULT: "#293957",
-              foreground: "#eaf1ff",
+              foreground: "#293957",
+              DEFAULT: "#eaf1ff",
               50: "#eaf1ff",
               100: "#cad5ea",
               200: "#a8b8d6",

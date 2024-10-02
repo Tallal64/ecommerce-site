@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Button } from "@nextui-org/button";
-import { Plus } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { setCartId, setCartValue } from "../redux/features/featureSlice";
 
-const AddToCartButton = ({ id, text, size }) => {
+const AddToCartButton = ({ id, text, size, icon, ...restProps }) => {
   const dispatch = useDispatch();
 
   const handleCart = () => {
@@ -13,15 +12,15 @@ const AddToCartButton = ({ id, text, size }) => {
   };
   return (
     <Button
-      isIconOnly
       radius="full"
       color="primary"
-      variant="shadow"
+      variant="solid"
       size={size}
       onClick={handleCart}
+      {...restProps}
     >
       {text}
-      <Plus size={20} />
+      {icon}
     </Button>
   );
 };

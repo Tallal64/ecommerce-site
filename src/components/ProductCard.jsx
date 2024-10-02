@@ -7,11 +7,12 @@ import {
   CardHeader,
   Image,
 } from "@nextui-org/react";
-import { Heart } from "lucide-react";
+import { Heart, Plus } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import AddToCartButton from "./AddToCartButton";
 
-const ProductCard = ({ image, title, price, ...restProps }) => {
+const ProductCard = ({ href, image, title, price, ...restProps }) => {
   const [like, Setlike] = useState(false);
 
   return (
@@ -32,22 +33,24 @@ const ProductCard = ({ image, title, price, ...restProps }) => {
         >
           <Heart size={16} className={`${like ? "fill-current" : ""}`} />
         </Button>
-        <AddToCartButton size={"sm"} />
+        <AddToCartButton size={"sm"} isIconOnly icon={<Plus size={18} />} />
       </CardHeader>
 
-      <CardBody className="overflow-visible">
-        <Image
-          radius="lg"
-          isZoomed
-          alt={title}
-          src={image}
-          className="w-full h-full object-cover z-0 "
-        />
-      </CardBody>
-      <CardFooter className="flex-col items-start h-full">
-        <p className=" text-lg font-medium">{title}</p>
-        <p className=" text-2xl font-bold">${price}</p>
-      </CardFooter>
+      <Link to={`/product/${href}`}>
+        <CardBody className="overflow-visible">
+          <Image
+            radius="lg"
+            isZoomed
+            alt={title}
+            src={image}
+            className="w-full h-full object-cover z-0 "
+          />
+        </CardBody>
+        <CardFooter className="flex-col items-start h-full overflow-hidden">
+          <p className="text-lg font-medium w-full truncate">{title}</p>
+          <p className="text-2xl font-bold">${price}</p>
+        </CardFooter>
+      </Link>
     </Card>
   );
 };

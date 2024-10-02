@@ -53,7 +53,7 @@ const Header = () => {
       className="mx-auto py-2"
     >
       <nav className="flex-[0.7]">
-        <NavLink className="text-4xl radley-italic">ventore</NavLink>
+        <NavLink to={"/"} className="text-4xl radley-italic">ventore</NavLink>
       </nav>
       <NavbarContent
         className="hidden gap-4 md:flex md:gap-x-10"

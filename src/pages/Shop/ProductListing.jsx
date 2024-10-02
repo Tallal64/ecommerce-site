@@ -33,6 +33,7 @@ const ProductListing = () => {
         {products.map((item) => (
           <div key={item.id}>
             <ProductCard
+              href={item.id}
               title={item.title}
               image={item.image}
               price={item.price}
