@@ -33,7 +33,15 @@ const ProductCard = ({ href, image, title, price, ...restProps }) => {
         >
           <Heart size={16} className={`${like ? "fill-current" : ""}`} />
         </Button>
-        <AddToCartButton size={"sm"} isIconOnly icon={<Plus size={18} />} />
+        <AddToCartButton
+          size={"sm"}
+          isIconOnly
+          icon={<Plus size={18} />}
+          cartId={href}
+          cartImage={image}
+          cartTitle={title}
+          cartPrice={price}
+        />
       </CardHeader>
 
       <Link to={`/product/${href}`}>

@@ -303,7 +303,7 @@ export const products = [
   },
   {
     id: nanoid(),
-    title: "Men's Nike Dri-FIT Standard Issue Reversible Basketball Jersey",
+    title: "Men's Nike Reversible Basketball Jersey",
     description:
       "Embrace the Mamba Mentality in this reversible sweat-wicking jersey. Much like Kobe on the court, its reversible design offers 2-way value to your wardrobe: breathable mesh on 1 side is paired with smooth knit and an embroidered Kobe logo on the other.",
     category: "Kids' Clothing",

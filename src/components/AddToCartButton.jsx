@@ -1,20 +1,36 @@
 /* eslint-disable react/prop-types */
 import { Button } from "@nextui-org/button";
 import { useDispatch } from "react-redux";
-import { setCartId, setCartValue } from "../redux/features/featureSlice";
+import { addToCart } from "../redux/features/featureSlice";
 
-const AddToCartButton = ({ id, text, size, icon, ...restProps }) => {
+const AddToCartButton = ({
+  text,
+  size,
+  icon,
+  cartId,
+  cartImage,
+  cartTitle,
+  cartPrice,
+  ...restProps
+}) => {
   const dispatch = useDispatch();
 
   const handleCart = () => {
-    dispatch(setCartId(id));
-    dispatch(setCartValue());
+    const product = {
+      id: cartId,
+      image: cartImage,
+      title: cartTitle,
+      price: cartPrice,
+    };
+
+    dispatch(addToCart(product));
   };
+
   return (
     <Button
       radius="full"
       color="primary"
-      variant="solid"
+      variant="shadow"
       size={size}
       onClick={handleCart}
       {...restProps}

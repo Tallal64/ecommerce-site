@@ -1024,7 +1024,7 @@
     "@nextui-org/shared-utils" "2.0.8"
     "@nextui-org/use-data-scroll-overflow" "2.1.7"
 
-"@nextui-org/select@2.2.7":
+"@nextui-org/select@2.2.7", "@nextui-org/select@^2.2.7":
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/@nextui-org/select/-/select-2.2.7.tgz#991468745b5a4aa61e4dbd0bd99a9ad6724ee79f"
   integrity sha512-lA2EOjquhiHmLSInHFEarq64ZOQV37+ry1d8kvsqJ7R9dsqw1QEuMzH2Kk8/NqwrYMccHh5iAZ7PaLp90NSSxg==

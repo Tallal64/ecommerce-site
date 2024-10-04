@@ -2,8 +2,8 @@
 import { Button, Card, CardHeader, Image } from "@nextui-org/react";
 import { Heart, Plus } from "lucide-react";
 import { useState } from "react";
-import AddToCartButton from "./AddToCartButton";
 import { Link } from "react-router-dom";
+import AddToCartButton from "./AddToCartButton";
 
 const HeroCard = ({ href, image, title, price, description }) => {
   const [like, Setlike] = useState(false);
@@ -26,7 +26,14 @@ const HeroCard = ({ href, image, title, price, description }) => {
         >
           <Heart size={18} className={`${like ? "fill-current" : ""}`} />
         </Button>
-        <AddToCartButton icon={<Plus size={22} />} isIconOnly />
+        <AddToCartButton
+          icon={<Plus size={22} />}
+          isIconOnly
+          cartId={href}
+          cartImage={image}
+          cartTitle={title}
+          cartPrice={price}
+        />
       </CardHeader>
 
       <Link to={`/product/${href}`}>

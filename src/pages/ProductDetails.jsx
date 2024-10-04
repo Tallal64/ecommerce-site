@@ -3,8 +3,8 @@ import { Image } from "@nextui-org/react";
 import { Heart, Plus } from "lucide-react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { products } from "../../assets/dummyData";
-import AddToCartButton from "../../components/AddToCartButton";
+import { products } from "../assets/dummyData";
+import AddToCartButton from "../components/AddToCartButton";
 
 const ProductDetails = () => {
   const { id } = useParams(); // Get the product ID from the URL
@@ -62,9 +62,14 @@ const ProductDetails = () => {
           <div className="flex flex-col gap-y-4">
             <AddToCartButton
               text={"add to cart"}
+              variant={"solid"}
               size={"lg"}
               className={"text-lg capitalize w-2/3"}
               icon={<Plus size={22} />}
+              cartId={product.id}
+              cartImage={product.image}
+              cartTitle={product.title}
+              cartPrice={product.price}
             />
             <AddToCartButton
               text={"add to wishlist"}
@@ -76,9 +81,12 @@ const ProductDetails = () => {
           </div>
 
           {/*  */}
-          <p className="mt-6 mb-1 text-secondary/70">{product.warrantyInformation}</p>
-          <p className="text-secondary/70 capitalize">{product.shippingInformation}</p>
-          
+          <p className="mt-6 mb-1 text-secondary/70">
+            {product.warrantyInformation}
+          </p>
+          <p className="text-secondary/70 capitalize">
+            {product.shippingInformation}
+          </p>
         </div>
       </div>
     </div>
