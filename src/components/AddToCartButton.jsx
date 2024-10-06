@@ -28,7 +28,7 @@ const AddToCartButton = ({
 
   return (
     <Button
-      radius="full"
+      radius="md"
       color="primary"
       variant="shadow"
       size={size}

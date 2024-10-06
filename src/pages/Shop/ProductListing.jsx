@@ -21,11 +21,7 @@ const ProductListing = () => {
         radius="sm"
       >
         {tabs.map((tab, index) => (
-          <Tab
-            key={index}
-            title={tab.title}
-            className={`${isDarkMode ? "border-none" : "border"}`}
-          />
+          <Tab key={index} title={tab.title} />
         ))}
       </Tabs>
 

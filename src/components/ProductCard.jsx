@@ -24,7 +24,7 @@ const ProductCard = ({ href, image, title, price, ...restProps }) => {
       <CardHeader className="absolute z-10 top-4 right-4 flex-col items-end">
         <Button
           isIconOnly
-          radius="full"
+          radius="md"
           color="primary"
           variant="shadow"
           size="sm"
@@ -55,8 +55,10 @@ const ProductCard = ({ href, image, title, price, ...restProps }) => {
           />
         </CardBody>
         <CardFooter className="flex-col items-start h-full overflow-hidden">
-          <p className="text-lg font-medium w-full truncate">{title}</p>
-          <p className="text-2xl font-bold">${price}</p>
+          <p className="text-lg font-medium w-full truncate text-secondary">
+            {title}
+          </p>
+          <p className="text-2xl font-bold text-secondary">${price}</p>
         </CardFooter>
       </Link>
     </Card>

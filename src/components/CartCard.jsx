@@ -10,25 +10,36 @@ import {
 import { Heart, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteFromCart } from "../redux/features/featureSlice";
+import {
+  deleteFromCart,
+  updateCartQuantity,
+} from "../redux/features/featureSlice";
 
 const CartCard = ({
   cartId,
   cartImage,
   cartTitle,
   cartPrice,
+  cartQuantity,
 }) => {
   const dispatch = useDispatch();
-  const [like, Setlike] = useState(false);
+  const [like, setLike] = useState(false);
 
   const numbers = [...Array(10)].map((_, i) => ({
     key: i + 1,
     label: `${i + 1}`,
   }));
 
-  function handleDelete(cartId) {
+  // Handle delete
+  const handleDelete = (cartId) => {
     dispatch(deleteFromCart(cartId));
-  }
+  };
+
+  // Handle quantity change
+  const handleQuantityChange = (selectedKey) => {
+    const quantity = parseInt(selectedKey.currentKey);
+    dispatch(updateCartQuantity({ id: cartId, quantity }));
+  };
 
   return (
     <Card
@@ -49,11 +60,15 @@ const CartCard = ({
             <p className="text-secondary/55">Quantity</p>
             <Select
               size="sm"
-              // placeholder={`${cartQuantity}`}
-              placeholder="1"
+              placeholder={`${cartQuantity}`}
               variant="flat"
-              aria-label="Select quantity" 
+              aria-label="Select quantity"
               className="max-w-[60px]"
+              // selectedKey parameter: This represents the value that was selected from the dropdown
+              selectedKeys={new Set([`${cartQuantity}`])} // Default to current quantity
+              onSelectionChange={(selectedKey) =>
+                handleQuantityChange(selectedKey)
+              }
             >
               {numbers.map((number) => (
                 <SelectItem key={number.key} className="text-secondary/55">
@@ -67,7 +82,7 @@ const CartCard = ({
               isIconOnly
               size="sm"
               variant="light"
-              onClick={() => Setlike(!like)}
+              onClick={() => setLike(!like)}
             >
               <Heart
                 size={20}

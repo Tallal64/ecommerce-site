@@ -19,10 +19,8 @@ export const featureSlice = createSlice({
         (item) => item.id === actions.payload.id
       );
       if (!existingProduct) {
-        state.cartItems.push(actions.payload);
+        state.cartItems.push({ ...actions.payload, quantity: 1 });
         state.cartValue += 1;
-      } else {
-        existingProduct.quantity += 1;
       }
     },
 
@@ -32,9 +30,18 @@ export const featureSlice = createSlice({
       );
       state.cartValue -= 1;
     },
+
+    updateCartQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const product = state.cartItems.find((item) => item.id === id);
+      if (product) {
+        product.quantity = quantity;
+      }
+    },
   },
 });
 
-export const { setCartId, addToCart, deleteFromCart } = featureSlice.actions;
+export const { setCartId, addToCart, deleteFromCart, updateCartQuantity } =
+  featureSlice.actions;
 
 export default featureSlice.reducer;

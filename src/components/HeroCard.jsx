@@ -17,7 +17,7 @@ const HeroCard = ({ href, image, title, price, description }) => {
       <CardHeader className="absolute z-10 top-4 right-4 flex-col items-end">
         <Button
           isIconOnly
-          radius="full"
+          radius="md"
           color="primary"
           variant="shadow"
           size="md"

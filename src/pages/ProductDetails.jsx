@@ -38,14 +38,16 @@ const ProductDetails = () => {
           <p className="text-lg text-secondary/55 mt-2">
             {product.description}
           </p>
-          <p className="text-3xl font-bold mt-4">${product.price}</p>
+          <p className="text-3xl font-bold mt-4 text-secondary">
+            ${product.price}
+          </p>
 
           {/* size */}
           <div className="flex gap-x-2 my-6">
             {sizes.map((size, index) => (
               <Button
                 key={index}
-                radius="full"
+                radius="md"
                 isIconOnly
                 size="lg"
                 color="secondary"
@@ -71,13 +73,15 @@ const ProductDetails = () => {
               cartTitle={product.title}
               cartPrice={product.price}
             />
-            <AddToCartButton
-              text={"add to wishlist"}
-              variant={"bordered"}
-              size={"lg"}
-              className={"text-lg capitalize w-2/3"}
-              icon={<Heart size={20} />}
-            />
+            <Button
+              size="lg"
+              color="primary"
+              variant="bordered"
+              className="text-lg capitalize w-2/3"
+            >
+              add to wishlist
+              <Heart size={20} />
+            </Button>
           </div>
 
           {/*  */}
