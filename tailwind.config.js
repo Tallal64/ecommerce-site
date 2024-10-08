@@ -62,8 +62,8 @@ module.exports = {
         },
         dark: {
           colors: {
-            background: "#121212",
             foreground: "#ffffff",
+            background: "#121212",
             secondary: {
               foreground: "#293957",
               DEFAULT: "#eaf1ff",

@@ -34,7 +34,7 @@ const BestSelling = () => {
 
   return (
     <div className="container mx-auto mt-20">
-      <h3 className="text-3xl capitalize font-medium mb-3 pl-4">
+      <h3 className="text-3xl capitalize font-medium mb-3 pl-4 text-center">
         our best selling products
       </h3>
 
