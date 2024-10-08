@@ -10,6 +10,7 @@ const ProductDetails = () => {
   const { id } = useParams(); // Get the product ID from the URL
   const [selectedSize, setSelectedSize] = useState(null); // Track selected size
   const sizes = ["s", "m", "lg", "xl", "xxl"]; // Array of sizes
+  const [like, setLike] = useState(false);
 
   const product = products.find((item) => item.id === id); // Find the product based on the ID
 
@@ -78,9 +79,10 @@ const ProductDetails = () => {
               color="primary"
               variant="bordered"
               className="text-lg capitalize w-2/3"
+              onClick={() => setLike(!like)}
             >
               add to wishlist
-              <Heart size={20} />
+              <Heart size={20} className={`${like ? "fill-current" : ""}`} />
             </Button>
           </div>
 
