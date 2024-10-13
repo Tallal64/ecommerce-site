@@ -10,13 +10,14 @@ const About = () => {
   const data = [
     {
       title: "about developer",
-      description:
-        "Hey there, I'm Talal Khan, the passionate developer behind this site. I love to build intuitive and engaging user experiences. From crafting interactive features to refining every detail, I aim to bring ideas to life through code.",
+      description: `Hey there, I'm `,
+      highlightedText: "Talal Khan",
+      afterText: `, the passionate developer behind this site. I love to build intuitive and engaging user experiences. From crafting interactive features to refining every detail, I aim to bring ideas to life through code.`,
     },
     {
       title: "Technologies I Use",
       description:
-        "In the development of this website, I've harnessed the power of the following frameworks and technologies to create a modern, single-page application (SPA):",
+        "In the development of this website, I've harnessed the power of the following frameworks and technologies to create a modern ecommerce site.",
       icons: [
         {
           href: "https://tailwindcss.com ",
@@ -43,14 +44,18 @@ const About = () => {
   ];
 
   return (
-    <div className="container mx-auto flex items-center justify-center mt-5">
-      <div className="h-[45vh] max-w-screen-lg mx-auto">
+    <div className="h-[45vh] container mx-auto flex items-center justify-center mt-5">
+      <div className="max-w-screen-lg mx-auto">
         {data.map((item, index) => (
           <div key={index} className="mt-6 space-y-4">
             <h2 className="text-2xl font-semibold text-secondary capitalize">
               {item.title}
             </h2>
-            <p className="text-secondary/60 text-lg">{item.description}</p>
+            <p className="text-secondary/60 text-lg">
+              {item.description}
+              <span className="text-primary font-medium">{item.highlightedText}</span>
+              {item.afterText}
+            </p>
             <div className="flex items-center justify-around mx-20">
               {item.icons?.map((icon, index) => (
                 <div key={index} className="h-16">
