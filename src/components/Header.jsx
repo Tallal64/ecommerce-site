@@ -1,14 +1,21 @@
-import { Input, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
-import { Moon, Search, ShoppingBag, Sun, User2 } from "lucide-react";
+import {
+  Navbar,
+  NavbarContent,
+  NavbarItem,
+  useDisclosure,
+} from "@nextui-org/react";
+import { Moon, ShoppingBag, Sun, User2 } from "lucide-react";
 import { nanoid } from "nanoid";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { toggleTheme } from "../redux/theme/themeSlice";
+import SearchFunctionality from "./SearchFunctionality";
 
 const Header = () => {
   const isDarkMode = useSelector((state) => state.theme.darkMode);
   const cartValue = useSelector((state) => state.feature.cartValue);
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -52,11 +59,11 @@ const Header = () => {
       shouldHideOnScroll
       className="mx-auto py-2"
     >
-      <nav className="flex-[0.7]">
+      <NavbarItem className="flex-[0.7]">
         <NavLink to={"/"} className="text-4xl radley-italic">
           ventore
         </NavLink>
-      </nav>
+      </NavbarItem>
       <NavbarContent
         className="hidden gap-4 md:flex md:gap-x-10"
         justify="center"
@@ -80,14 +87,10 @@ const Header = () => {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Input
-            type="email"
-            placeholder="you@example.com"
-            size="md"
-            radius="lg"
-            startContent={
-              <Search strokeWidth={1.5} className="text-foreground/50" />
-            }
+          <SearchFunctionality
+            onOpen={onOpen}
+            isOpen={isOpen}
+            onOpenChange={onOpenChange}
           />
         </NavbarItem>
         <NavbarItem className="relative flex items-enter space-x-3 ml-5">
