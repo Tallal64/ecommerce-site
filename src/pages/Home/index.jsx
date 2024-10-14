@@ -1,5 +1,4 @@
 import BestSelling from "./BestSelling";
-import Categories from "./Categories";
 import Cta from "./Cta";
 import HeroSection from "./HeroSection";
 import Services from "./Services";
@@ -9,7 +8,6 @@ const Home = () => {
     <>
       <HeroSection />
       <Services />
-      <Categories />
       <BestSelling />
       <Cta />
     </>

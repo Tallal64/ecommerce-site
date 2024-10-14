@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./Layout";
 import About from "./pages/About/About";
 import Cart from "./pages/Cart";
+import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
 import Shop from "./pages/Shop";
@@ -16,6 +17,7 @@ const RoutesConf = () => {
           <Route path="shop" element={<Shop />} />
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </Router>
