@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/button";
+import { Button, ButtonGroup } from "@nextui-org/button";
 import { Image } from "@nextui-org/react";
 import { Heart, Plus } from "lucide-react";
 import { useState } from "react";
@@ -23,28 +23,30 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="container mx-auto mt-10">
-      <div className="flex justify-center items-center gap-x-20">
+    <div className="container mx-auto mt-10 px-2 xl:px-0">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-x-10 xl:gap-x-20">
         {/* image side */}
-        <div className="w-full flex justify-end">
+        <div className="w-full flex justify-center md:justify-end">
           <Image
             src={product.image}
             alt={product.title}
-            className="h-[592px] w-[592px] max-h-[592px] max-w-[592px]"
+            className="h-[282px] w-[282px] md:h-[352px] md:w-[352px] lg:h-[380px] lg:w-[380px] xl:h-[492px] xl:w-[492px] 2xl:h-[592px] 2xl:w-[592px] max-h-[592px] max-w-[592px]"
           />
         </div>
         {/* text side */}
-        <div className="w-full">
-          <h6 className="text-5xl font-bold text-secondary">{product.title}</h6>
-          <p className="text-lg text-secondary/55 mt-2">
+        <div className="w-full text-center md:text-left mt-4">
+          <h6 className="text-xl lg:text-2xl xl:text-4xl font-semibold xl:font-bold text-secondary">
+            {product.title}
+          </h6>
+          <p className="text-sm xl:text-lg text-secondary/55 mt-2">
             {product.description}
           </p>
-          <p className="text-3xl font-bold mt-4 text-secondary">
+          <p className="text-2xl xl:text-3xl font-semibold xl:font-bold mt-4 text-secondary">
             ${product.price}
           </p>
 
           {/* size */}
-          <div className="flex gap-x-2 my-6">
+          <div className="flex gap-x-2 my-6 justify-center md:justify-start">
             {sizes.map((size, index) => (
               <Button
                 key={index}
@@ -52,9 +54,9 @@ const ProductDetails = () => {
                 isIconOnly
                 size="lg"
                 color="secondary"
-                variant={selectedSize === size ? "solid" : "faded"} // Only solid for selected size
-                className="font-medium uppercase"
-                onClick={() => setSelectedSize(size)} // Set the clicked size as selected
+                variant={selectedSize === size ? "solid" : "faded"}
+                className="text-sm xl:text-base font-medium uppercase"
+                onClick={() => setSelectedSize(size)}
               >
                 {size}
               </Button>
@@ -62,13 +64,13 @@ const ProductDetails = () => {
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-col gap-y-4">
+          <ButtonGroup className="hidden sm:block">
             <AddToCartButton
               text={"add to cart"}
               variant={"solid"}
               size={"lg"}
-              className={"text-lg capitalize w-2/3"}
-              icon={<Plus size={22} />}
+              className={"text-sm lg:text-base xl:text-lg capitalize"}
+              icon={<Plus size={20} />}
               cartId={product.id}
               cartImage={product.image}
               cartTitle={product.title}
@@ -78,19 +80,43 @@ const ProductDetails = () => {
               size="lg"
               color="primary"
               variant="bordered"
-              className="text-lg capitalize w-2/3"
+              className="text-sm lg:text-base xl:text-lg capitalize"
               onClick={() => setLike(!like)}
             >
               add to wishlist
-              <Heart size={20} className={`${like ? "fill-current" : ""}`} />
+              <Heart size={18} className={`${like ? "fill-current" : ""}`} />
+            </Button>
+          </ButtonGroup>
+
+          <div className="flex flex-col sm:hidden gap-y-4">
+            <AddToCartButton
+              text={"add to cart"}
+              variant={"solid"}
+              size={"lg"}
+              className={"text-sm lg:text-base xl:text-lg capitalize"}
+              icon={<Plus size={20} />}
+              cartId={product.id}
+              cartImage={product.image}
+              cartTitle={product.title}
+              cartPrice={product.price}
+            />
+            <Button
+              size="lg"
+              color="primary"
+              variant="bordered"
+              className="text-sm lg:text-base xl:text-lg capitalize"
+              onClick={() => setLike(!like)}
+            >
+              add to wishlist
+              <Heart size={18} className={`${like ? "fill-current" : ""}`} />
             </Button>
           </div>
 
           {/*  */}
-          <p className="mt-6 mb-1 text-secondary/70">
+          <p className="hidden xl:flex mt-6 mb-1 text-secondary/70">
             {product.warrantyInformation}
           </p>
-          <p className="text-secondary/70 capitalize">
+          <p className="hidden xl:flex text-secondary/70 capitalize">
             {product.shippingInformation}
           </p>
         </div>
