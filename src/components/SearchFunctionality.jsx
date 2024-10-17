@@ -45,13 +45,23 @@ const SearchFunctionality = ({ onOpen, isOpen, onOpenChange }) => {
         size="md"
         radius="lg"
         variant="flat"
-        className="text-foreground/80 capitalize"
+        className="text-foreground/80 capitalize hidden lg:flex"
         startContent={
           <Search size={20} strokeWidth={1.5} className="text-foreground/50" />
         }
         endContent={<Kbd keys={["ctrl"]}>K</Kbd>}
       >
         Quick Search...
+      </Button>
+
+      <Button
+        onPress={onOpen}
+        size="sm"
+        isIconOnly
+        variant="light"
+        className="capitalize flex lg:hidden"
+      >
+        <Search className="w-4 h-4 xs:w-5 xs:h-5" />
       </Button>
 
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} hideCloseButton>

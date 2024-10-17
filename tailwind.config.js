@@ -17,7 +17,7 @@ module.exports = {
       sm: "640px", // Standard phones, small tablets
       md: "768px", // Small tablets, portrait tablets
       lg: "1024px", // Tablets, small laptops
-      xl: "1280px", // Laptops, desktops
+      xl: "1281px", // Laptops, desktops
       "2xl": "1536px", // Large desktops
     },
   },

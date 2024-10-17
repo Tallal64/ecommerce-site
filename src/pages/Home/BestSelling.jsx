@@ -33,8 +33,8 @@ const BestSelling = () => {
   let bestSelling = getRandomElements(products, 7);
 
   return (
-    <div className="container mx-auto mt-20">
-      <h3 className="text-3xl capitalize font-medium mb-3 pl-4 text-center">
+    <div className="container mx-auto mt-16 sm:mt-20">
+      <h3 className="text-xl sm:text-3xl capitalize font-medium sm:mb-3 pl-4 text-center">
         our best selling products
       </h3>
 
@@ -59,7 +59,7 @@ const BestSelling = () => {
           isIconOnly
           radius="full"
           variant="flat"
-          className="absolute top-[50%] left-5"
+          className="absolute top-[50%] left-5 hidden sm:flex"
           onClick={scrollPrev}
         >
           <ArrowLeft size={20} />
@@ -68,7 +68,7 @@ const BestSelling = () => {
           isIconOnly
           radius="full"
           variant="flat"
-          className="absolute top-[50%] right-5"
+          className="absolute top-[50%] right-5 hidden sm:flex"
           onClick={scrollNext}
         >
           <ArrowRight size={20} />

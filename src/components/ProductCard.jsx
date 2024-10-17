@@ -18,7 +18,7 @@ const ProductCard = ({ href, image, title, price, ...restProps }) => {
   return (
     <Card
       shadow="sm"
-      className="bg-transparent w-[420px] h-[520px] max-w-[420px] max-h-[520px] cursor-pointer"
+      className="bg-transparent w-[320px] h-[420px] sm:w-[420px] sm:h-[520px] max-w-[420px] max-h-[520px] cursor-pointer"
       {...restProps}
     >
       <CardHeader className="absolute z-10 top-4 right-4 flex-col items-end">
@@ -55,10 +55,10 @@ const ProductCard = ({ href, image, title, price, ...restProps }) => {
           />
         </CardBody>
         <CardFooter className="flex-col items-start h-full overflow-hidden">
-          <p className="text-lg font-medium w-full truncate text-secondary">
+          <p className="text-sm sm:text-lg font-medium w-full truncate text-secondary">
             {title}
           </p>
-          <p className="text-2xl font-bold text-secondary">${price}</p>
+          <p className="text-lg sm:text-2xl font-bold text-secondary">${price}</p>
         </CardFooter>
       </Link>
     </Card>

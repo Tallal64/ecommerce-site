@@ -33,7 +33,7 @@ const HeroSection = () => {
 
   return (
     <div className="container mx-auto mt-5">
-      <h2 className="text-xl font-semibold uppercase text-center mb-1">
+      <h2 className="sm:text-xl font-semibold uppercase text-center mb-1">
         new released
       </h2>
 
@@ -62,7 +62,7 @@ const HeroSection = () => {
           isIconOnly
           radius="full"
           variant="flat"
-          className="absolute top-[50%] left-5"
+          className="absolute top-[50%] left-5 hidden sm:flex"
           onClick={scrollPrev}
         >
           <ArrowLeft size={20} />
@@ -71,7 +71,7 @@ const HeroSection = () => {
           isIconOnly
           radius="full"
           variant="flat"
-          className="absolute top-[50%] right-5"
+          className="absolute top-[50%] right-5 hidden sm:flex"
           onClick={scrollNext}
         >
           <ArrowRight size={20} />
