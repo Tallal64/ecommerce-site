@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-foreground/10 py-10 px-2 mt-20">
+    <footer className="bg-foreground/10 py-10 px-2 mt-auto">
       <div className="container mx-auto">
         {/* upperFooter */}
         <div className="flex flex-col sm:flex-row justify-between">

@@ -19,10 +19,6 @@ const Cart = () => {
 
     const grandTotal = totalPrice + shippingFee;
 
-    console.log("Total Price: $", totalPrice);
-    console.log("Shipping Fee: $", shippingFee);
-    console.log("Grand Total: $", grandTotal);
-
     return {
       totalPrice,
       shippingFee,
@@ -32,11 +28,12 @@ const Cart = () => {
   const { totalPrice, shippingFee, grandTotal } = cartTotals();
 
   return (
-    <div className="container mx-auto mt-5 min-h-[50vh]">
+    <div className="container mx-auto mt-5 px-3 xl:px-0">
       {cartItems.length > 0 ? (
-        <div className="flex justify-between">
-          <div className="flex-1">
-            <div className="space-y-5">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10">
+          {/* Cart Items */}
+          <div className="flex-auto w-full md:w-2/3">
+            <div className="space-y-5 w-full">
               {cartItems.map((item) => (
                 <CartCard
                   key={item.id}
@@ -50,9 +47,10 @@ const Cart = () => {
             </div>
           </div>
 
-          <div className="flex-1 flex justify-end">
-            <div className="p-5 w-1/2">
-              <h5 className="text-3xl font-medium capitalize mb-5 text-secondary">
+          {/* Summary Section */}
+          <div className="w-full md:w-1/3 flex justify-center lg:justify-end">
+            <div className="p-5 w-full max-w-[320px] shadow-lg rounded-lg">
+              <h5 className="text-2xl md:text-3xl font-medium capitalize mb-5 text-secondary">
                 Summary
               </h5>
               <div className="space-y-3">
