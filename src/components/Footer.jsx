@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="fixed bottom-0 w-full bg-foreground/10 py-10 px-2 mt-20">
+    <footer className="bg-foreground/10 py-10 px-2 mt-20">
       <div className="container mx-auto">
         {/* upperFooter */}
         <div className="flex flex-col sm:flex-row justify-between">
@@ -90,7 +90,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
