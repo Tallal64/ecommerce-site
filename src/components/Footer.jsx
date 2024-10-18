@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-foreground/10 py-10 px-2 mt-20">
+    <div className="fixed bottom-0 w-full bg-foreground/10 py-10 px-2 mt-20">
       <div className="container mx-auto">
         {/* upperFooter */}
         <div className="flex flex-col sm:flex-row justify-between">
@@ -45,9 +45,10 @@ const Footer = () => {
             <div>
               <NavLink className="text-3xl radley-italic">ventore</NavLink>
             </div>
-            <p className="text-xs">
-              Explore a world of fashion with exclusive Discounts.<br className="block lg:hidden"/> Dive into
-              <br className="hidden lg:block"/>
+            <p className="text-xs md:text-sm">
+              Explore a world of fashion with exclusive Discounts.
+              <br className="block lg:hidden" /> Dive into
+              <br className="hidden lg:block" />
               Your Ultimate style destination today.
             </p>
             <NavLink className="text-xs md:text-sm">virtore@mail.com</NavLink>
@@ -56,10 +57,12 @@ const Footer = () => {
           <div className="hidden sm:flex flex-1 mt-10 sm:mt-0 gap-y-3 sm:gap-y-0 justify-between">
             {footerLinks.map((link) => (
               <div key={nanoid()} className="">
-                <h2 className="text-base lg:text-lg sm:font-medium">{link.title}</h2>
+                <h2 className="text-base lg:text-lg sm:font-medium">
+                  {link.title}
+                </h2>
                 {link.links.map((link) => (
                   <Link
-                    className="flex text-xs mt-2 capitalize text-foreground/50"
+                    className="flex text-xs lg:text-sm mt-2 capitalize text-foreground/50"
                     key={nanoid()}
                   >
                     {link.title}
@@ -76,13 +79,13 @@ const Footer = () => {
 
           <div className="flex gap-x-5 mt-3 sm:mt-0">
             <Button isIconOnly radius="full" variant="flat">
-              <Instagram className="w-4 h-4 sm:w-5 sm:h-5"/>
+              <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
             <Button isIconOnly radius="full" variant="flat">
-              <Twitter className="w-4 h-4 sm:w-5 sm:h-5"/>
+              <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
             <Button isIconOnly radius="full" variant="flat">
-              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5"/>
+              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </div>
         </div>
