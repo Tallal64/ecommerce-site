@@ -22,24 +22,26 @@ const ProductListing = () => {
       : products.filter((product) => product.category === selectedCategory);
 
   return (
-    <div className="container mx-auto mt-10 flex flex-col">
-      <Tabs
-        color={`${isDarkMode ? "primary" : "secondary"}`}
-        size="lg"
-        radius="sm"
-        selectedKey={selectedCategory}
-        onSelectionChange={setSelectedCategory}
-      >
-        {categories.map((category) => (
-          <Tab
-            key={category.title}
-            title={category.title}
-            className="capitalize"
-          />
-        ))}
-      </Tabs>
+    <div className="container mx-auto mt-10 flex flex-col items-center xl:items-start">
+      <div className="w-full xl:w-fit flex justify-center">
+        <Tabs
+          color={`${isDarkMode ? "primary" : "secondary"}`}
+          size="lg"
+          radius="sm"
+          selectedKey={selectedCategory}
+          onSelectionChange={setSelectedCategory}
+        >
+          {categories.map((category) => (
+            <Tab
+              key={category.title}
+              title={category.title}
+              className="capitalize"
+            />
+          ))}
+        </Tabs>
+      </div>
 
-      <div className="grid grid-cols-4 gap-8 mt-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 justify-center mt-5">
         {filteredProducts.map((item) => (
           <div key={item.id}>
             <ProductCard
@@ -48,7 +50,7 @@ const ProductListing = () => {
               image={item.image}
               price={item.price}
               className={
-                "max-w-[380px] max-h-[480px] bg-transparent cursor-pointer"
+                "w-[280px] h-[280px] xs:w-[480px] xs:h-[480px] max-w-[380px] max-h-[480px] bg-transparent cursor-pointer"
               }
             />
           </div>
