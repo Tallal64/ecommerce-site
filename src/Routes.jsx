@@ -6,6 +6,7 @@ import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
 import Shop from "./pages/Shop";
+import IShowSpeed from "./pages/Shop/IShowSpeed";
 
 const RoutesConf = () => {
   return (
@@ -18,6 +19,7 @@ const RoutesConf = () => {
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="iShowSpeed" element={<IShowSpeed />} />
         </Route>
       </Routes>
     </Router>

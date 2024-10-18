@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import iShowSpeed from "./imgs/iShowSpeed.gif";
 import kid from "./imgs/kid.jpg";
 import kid1 from "./imgs/kid1.png";
 import kid2 from "./imgs/kid2.png";
@@ -24,7 +25,7 @@ import women3 from "./imgs/women3.jpg";
 import women4 from "./imgs/women4.jpg";
 import women5 from "./imgs/women5.jpg";
 
-export { kid, man, woman };
+export { iShowSpeed, kid, man, woman };
 
 export const products = [
   {

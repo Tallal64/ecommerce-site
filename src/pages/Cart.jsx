@@ -2,6 +2,7 @@ import { Button, Divider } from "@nextui-org/react";
 import { PackageOpen } from "lucide-react";
 import { useSelector } from "react-redux";
 import CartCard from "../components/CartCard";
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.feature.cartItems);
@@ -88,7 +89,9 @@ const Cart = () => {
                 variant="solid"
                 className="w-full mt-10"
               >
-                Proceed to checkout
+                <NavLink to={"/iShowSpeed"} className={``}>
+                  Proceed to checkout
+                </NavLink>
               </Button>
             </div>
           </div>
