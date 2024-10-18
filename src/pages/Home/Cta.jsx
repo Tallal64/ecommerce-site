@@ -7,10 +7,10 @@ const Cta = () => {
 
   return (
     <div className="container mx-auto my-20 space-y-4">
-      <h4 className="text-2xl font-semibold text-center">
+      <h4 className="text-2xl lg:text-4xl font-semibold text-center">
         Subscribe now & <br className="md:hidden" /> get 20% off
       </h4>
-      <p className="text-base font-normal text-foreground/60 text-center">
+      <p className="text-base lg:text-xl font-normal text-foreground/60 text-center">
         Its get so maad. when the <br className="md:hidden"/> rock is cooking!
       </p>
       <div className="max-w-screen-md mx-auto">

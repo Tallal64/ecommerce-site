@@ -20,11 +20,11 @@ const Contact = () => {
   ];
 
   return (
-    <div className="container mx-auto h-[45vh] mt-5">
+    <div className="container mx-auto mt-5">
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-3xl font-medium mb-5">Contact Us</h2>
+        <h2 className="text-2xl sm:text-3xl font-medium mb-5">Contact Us</h2>
         {contactData.map((item) => (
-          <div key={item.label} className="mt-3">
+          <div key={item.label} className="w-full flex justify-center mt-3 px-5">
             {item.key === "name" || item.key === "email" ? (
               <Input
                 type="email"
@@ -33,7 +33,7 @@ const Contact = () => {
                 size="lg"
                 radius="lg"
                 variant="faded"
-                className="w-[500px] capitalize font-medium"
+                className="w-full max-w-[500px] capitalize md:font-medium"
               />
             ) : item.key === "help" ? (
               <Select
@@ -42,7 +42,7 @@ const Contact = () => {
                 placeholder={item.placeholder}
                 size="lg"
                 variant="faded"
-                className="w-[500px] font-medium text-secondary/50"
+                className="w-full max-w-[500px] font-medium text-secondary/50"
               >
                 {(help) => <SelectItem>{help.label}</SelectItem>}
               </Select>
@@ -52,7 +52,7 @@ const Contact = () => {
                 placeholder={item.placeholder}
                 size="lg"
                 variant="faded"
-                className="w-[500px] capitalize font-medium"
+                className="w-full max-w-[500px] capitalize md:font-medium"
               />
             )}
           </div>
