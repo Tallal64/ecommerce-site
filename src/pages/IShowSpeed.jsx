@@ -1,4 +1,4 @@
-import { iShowSpeed } from "../../assets/dummyData";
+import { iShowSpeed } from "../assets/dummyData";
 
 const IShowSpeed = () => {
   return (
